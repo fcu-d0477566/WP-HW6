@@ -14,7 +14,7 @@
 	<br><br>
         <select id="department"></select>
         <script>
-            var allDepartment = [
+            var all = [
                 {
                     college:"商學院",
                     department:["會計學系","國際經營與貿易學系","國際經營與貿易學系國際企業管理全英語學士班",
@@ -78,16 +78,16 @@
                     department:["雲端學院","外語教學中心","國語文教學中心","全校國際生大一不分系學士班"]
                 },
             ];
-            $.each(allDepartment, function(index, value) {
+            $.each(all, function(index, value) {
                 $("#college").append("<option>" + value.college + "</option>");
             });
-            $.each(allDepartment[0].department, function(index, value) {
+            $.each(all[0].department, function(index, value) {
                 $("#department").append("<option>" + value + "</option>");
             });
             $("#college").change(function() {
                 $("#department").empty();
                 var index = $("#college").prop("selectedIndex");
-                $.each(allDepartment[index].department, function(index, value) {
+                $.each(all[index].department, function(index, value) {
                     $("#department").append("<option>" + value + "</option>");
                 });
             });
